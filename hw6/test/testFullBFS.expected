@@ -1,0 +1,27 @@
+# Find a path with only one "hop" (edge) using the full Marvel dataset.
+# This test exercises both the parser and BFS algorithm on a rather large
+# graph, so it is more of a system test than a true unit test.
+
+loaded graph marvel
+
+path from BEAST/HENRY &HANK& P to WISDOM, PETER:
+BEAST/HENRY &HANK& P to WISDOM, PETER via X:PRIME
+
+path from 3-D MAN/CHARLES CHAN to PERRIKUS:
+3-D MAN/CHARLES CHAN to CAPTAIN AMERICA via AVF 4
+CAPTAIN AMERICA to PERRIKUS via T2 1
+
+path from ALBUQUERQUE, JEREMIA to 3-D MAN/CHARLES CHAN:
+ALBUQUERQUE, JEREMIA to BUCKY VI/ via NOM2 3
+BUCKY VI/ to CAPTAIN AMERICA via NOM 3
+CAPTAIN AMERICA to 3-D MAN/CHARLES CHAN via COC 1
+
+path from CENTURY to ALBUQUERQUE, JEREMIA:
+CENTURY to USAGENT/CAPTAIN JOHN via FW 9
+USAGENT/CAPTAIN JOHN to ALBUQUERQUE, JEREMIA via NOM2 3
+
+path from ANGAR THE SCREAMER/D to WASP/JANET VAN DYNE :
+ANGAR THE SCREAMER/D to WASP/JANET VAN DYNE  via ASPOT 29/2
+
+path from BINARY/CAROL DANVERS to MYSTIQUE/RAVEN DARKH:
+BINARY/CAROL DANVERS to MYSTIQUE/RAVEN DARKH via A@ 10

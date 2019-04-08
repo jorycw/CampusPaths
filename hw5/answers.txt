@@ -1,0 +1,198 @@
+CSE 331 Homework 5.  Answers to Written questions.
+Edit this file to supply your answers.
+
+Name: Jory Williams
+
+Problem 1. (Written exercises)
+
+(a)
+
+IntQueue1:
+	abstraction function: 
+		IntQueue1: where Queue<Integer>, q is represented as an array
+		holding integers, int.
+		Where : q = [int_1, int_2, int_3,... int_n-1] represents the queue
+		with int_1 being at the front and the first int to be queued and the 
+		next to be dequeued. With int_n-1 representing the last int queued with
+		n being the size of the queue.
+	rep invar:
+		for 0 <= i < n
+		
+			q[i] != null &&
+			q != null &&
+			n <= 0
+			
+		in words:
+		* IntQueue1 contains no null entries
+		* IntQueue1 is not null itself
+		* IntQueue1 is either empty or contains entries
+		
+IntQueue2:
+	abstraction function: 
+		IntQueue1: where a queue, q (that is size, s) is represented as a 
+		range of indices (i <= q < i + s) where i is the index in which 
+		the range starts inside an array
+		holding integers, int
+		Where : 
+		q = [...], s = 0 represents an empty queue
+		q = [int_1, int_2, int_3,... int_n-1] represents the queue
+		with int_(i) being at the front and the first int to be queued and the 
+		next to be dequeued. With int_(i + s) representing the last int queued with
+		s being the size of the queue and n being the size of the array.
+	rep invar:
+		i <= 0 &&
+		i + s <= n &&
+		s <= n &&
+		q != null &&
+			
+		in words:
+		* IntQueue2's front starts at or after the first index of the array
+		* IntQueue2's back ends at or before the last index of the array
+		* IntQueue2 size can fit into (or equals) the array that holds it
+		* IntQueue2 is not null itself			
+
+(b)
+
+a = [1, 2]
+b = [2, 3, 4]
+c = [1, 2, 3]
+d = [1, 2]
+e = [1, 2, 3, 4]
+f = [1, 2, 3]
+g = [1, 2]
+h = [2, 3, 4]
+
+in groups of similarity, where by themselves means not similar with any others
+(a, d, g)
+(b, h)
+(c, f)
+(e)
+
+QUESTION (c)
+	public int solveEquations(int x, int y, int z)
+		-Returns an int, integers are immutable and can't expose representation
+    public String[] decode(boolean slowly)
+    	-Although a class in java, strings are immutable, an array of 
+    	strings would get the client nothing of our representation. 
+    	Assuming that decodes a message field of the object, the boolean
+    	representing which of two ways to decode and the decoded message is
+    	placed in an array of strings and independent of the representation.
+    private Date myBirthday()
+    	- Private method and therefore can't be called by the client and
+    	consequently can't expose representation itself, if another method
+    	returned exactly what this method returns then client might have 
+    	access how how the date is being represented.
+    public String toString()
+    	- Shouldn't expose representation ever unless the implementation of 
+    	toString() returns the representation itself (doesn't ever seemed
+    	to be correct to do so though)
+    public Iterator<Integer> elements()
+    	- Just returns an Iterator of ints, ints reveal nothing about our
+    	representation of the integer elements, if there was no guarantee
+    	of order or duplicates, the lack of duplicates or existing order
+    	could give the user tips such as using sets or using lists respectively
+    	as representation
+    public Deck(List<Card> cards)
+		- Constructs a Deck object, this by itself will never expose 
+		representation of the deck, even if the client already knows how the
+		cards are being represented.
+
+Problem 2.  (Graph interface/operations)
+
+Node
+	This class allows representation of a certain node while allowing the node
+	to contain objs(Edges) that point to other nodes. Making Node a class 
+	allows storage of both its data value AND the other Nodes it points to
+
+    public Node(String nodeData)
+    public Node(Node oldNode)
+    	Two Node constructors, a basic one for creating a new node with a given
+    	data field, and a second for copying a node to maintain immutability
+    public void addEdge (String label, Node child)
+    public void addEdge (Edge newEdge)
+    	Two add edges fields, basic one and one for ease of client to add an
+    	already constructed edge, must remake the new Edge to maintain 
+    	immutability
+    public String getData()
+    	Getter for data field inside;
+    public List<Edge> getEdges()
+    	Getter for a Node's Edges
+    public boolean hasEdge(Edge edge)
+    	Ease of access for client to check if an edge is already contained in 
+    	certain node
+    public boolean equals(Object obj)
+    	Required to fulfill specs of Nodes being duplicates iff rheir data field
+    	was identical
+    public int hashCode()
+    	If equals() is overridden so must hashCode be
+    	
+Edge
+	This class represent a directed edge from a node to another node, it
+	making this an obj allows storing a data value of a edge between two 
+	nodes, allowing multiple edges to exist between the same parent
+	and children that are duplicates
+	
+    public Edge(String edgeLabel, Node nodeChild)
+    public Edge(Edge oldEdge)
+    	Two constructor, basic one for new object and one for creating a copy
+    	of an edge in order to maintain immutability
+    public String getLabel()
+    	returns Edge's label
+    public Node getChild()
+    	returns Edge's child
+    public boolean equals(Object obj)
+    	Overrode equals to allow a client control over whether duplicate
+    	edges (duplicate to the new equals()) were allowed to exist)
+    public int hashCode()
+		If equals() is overridden so must hashCode be
+		
+Graph
+	Object representing a class which contains nodes and edges between them.
+	Duplicate edges between the same nodes are not allowed to exist as 
+	duplicates represent no new information and only slow down looking for 
+	certain edges
+	
+    public void addNode(String data)
+    public void addEdge(Node parent, Node child, String label)
+    public List<Node> getNodes()
+    public List<Edge> getEdges(Node parent)
+    	Only methods needed for a general adding Nodes and adding Edges
+    	allows the creation of a full and complete graph, getting Nodes and
+    	getting edges of a Node allows access to all of the data in a 
+    	graph while retaining all of its information
+
+Problem 3.  (Testing strategy)
+	Implementation tests: I made tests for my Node and Edges classes first,
+	as the Graph and its tests would rely on the Node and Edge classes working
+	and testing correctly first.  For each class I first tested the
+	constructors being able to construct the basic objects, then tested their
+	equals() methods which would be crucial in testing the rest of the methods.
+	For the adder/getter method pairs, I first made tests for the adder type of
+	methods, using basic operations you would normally use them for.  Then for 
+	testing the getter methods I would first test the base case and then test
+	all of the side cases (such as no duplicates - where applicable). For all
+	these different cases I both had as equals case, testing if the 
+	operation was done before the get was called, and a !equals case (such
+	as a getEdge() not contain 2 of the same edges), this was not done in the
+	Adder test due to not having implemented whether cases such as duplicates
+	would be treated when added or when returned.
+
+Problem 4.  (Representation)
+	My choice of representation was a list of nodes in which the nodes 
+	contained lists of their children (adjacency list). I chose this method
+	because it excels against the other two when there are a lot of Nodes
+	but minimal edges. It can also store multiple nodes (vs adjacency matrix)
+	It is also much faster than an adjacency matrix in add and removing nodes.
+	Although for homework 6 an adjancency matrix might be preferred due to
+	the graph being very dense with edges, this graph class is for more than 
+	just the next homework.
+	
+	Adjacency Matrix - Faster than adjacency list when there are more edges
+	than nodes. Cannot contain multiple edges, and slower when adding or 
+	removing node as the matrix has to be resized. Faster if looking for 
+	a edge between two known Nodes.  
+	
+	Collection of edges - Can quickly add edges and nodes, but very unefficient
+	trying to search for edges of a certain node as you have to traverse
+	through all the edges for all the nodes. Maybe usable if you expect to look
+	up edges very little.

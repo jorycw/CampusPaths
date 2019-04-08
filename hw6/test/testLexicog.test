@@ -1,0 +1,42 @@
+# Simple test of breadth-first search algorithm.
+# Verifies that it when finding path it orders by
+# characters and then comics books, both lexicographically
+
+CreateGraph characters
+
+AddNode characters A
+AddNode characters B
+AddNode characters C
+AddNode characters D
+
+AddEdge characters A B ba
+AddEdge characters A C aa
+AddEdge characters B D aa
+AddEdge characters C D aa
+
+AddNode characters E
+AddNode characters F
+AddNode characters G
+AddNode characters H
+
+AddEdge characters E G aa
+AddEdge characters E F ba
+AddEdge characters G H aa
+AddEdge characters F H aa
+
+FindPath characters A D
+
+FindPath characters E H
+
+AddNode characters I
+AddNode characters J
+AddNode characters K
+
+AddEdge characters I J a
+AddEdge characters I J b
+
+AddEdge characters J K b
+AddEdge characters J K a
+
+FindPath characters I J
+FindPath characters J K

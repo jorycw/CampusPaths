@@ -1,0 +1,14 @@
+# Simple test of breadth-first search algorithm.
+# Verifies that it produces the correct output when either
+# the first, the second or when both of the characters are 
+# not in the graph
+
+CreateGraph characters
+AddNode characters A
+AddNode characters B
+
+FindPath characters A C
+
+FindPath characters C B
+
+FindPath characters D E

@@ -1,0 +1,27 @@
+# Testing file.
+# Tests listing back the nodes in graph, both alphabetically and 
+# with an empty graph
+
+# Create graph
+created graph graph1
+
+# Lists node of an empty graph
+graph1 contains:
+
+# Adds 3 different nodes to graph1
+added node n1 to graph1
+added node n2 to graph1
+added node n3 to graph1
+
+# Lists nodes that are easily alphabetized of graph1
+graph1 contains: n1 n2 n3
+
+# Add 5 more nodes to graph1 that are close in string comparison
+added node n to graph1
+added node nn to graph1
+added node 4n to graph1
+added node m to graph1
+added node o to graph1
+
+# Lists nodes checking for order of nodes alphabetically of graph1
+graph1 contains: 4n m n n1 n2 n3 nn o

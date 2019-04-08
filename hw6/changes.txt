@@ -1,0 +1,20 @@
+CSE 331 Homework 6.  Answers to Written questions.
+Edit this file to supply your answers.
+
+Name:  Jory Williams
+
+I changed my implementation of my Graph class from a List of Nodes which
+contained a List of edges going out from them to a Map that mapped each Node
+(as a String) to a Set of its Edges.  These implementations are very
+similar in design but the latter is much faster.  Storing the nodes
+in an arrayList isn't efficient in adding many nodes due to resizing
+and HashSets aren't as good as HashMaps for accessing a certain node
+to get its edges. A HashMap of Strings to Sets of Edges outperformed
+Lists and Sets heavily.
+
+Due to the similarities the ADT and AF had to be barely changed.  The 
+representation invariant had to be checked slightly different but is still
+the same by design and much smaller due to some of the properties being
+inherent now i.e.(I can't have duplicate edges anymore now that edges are
+stored in a hashSet).  Other methods and tests were adjusted to reflect this
+new implementation and the node and nodeTest class were deleted.

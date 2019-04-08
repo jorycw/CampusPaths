@@ -1,0 +1,17 @@
+# Find a path with only one "hop" (edge) using the full Marvel dataset.
+# This test exercises both the parser and BFS algorithm on a rather large
+# graph, so it is more of a system test than a true unit test.
+
+LoadGraph marvel marvel.tsv
+
+FindPath marvel BEAST/HENRY_&HANK&_P WISDOM,_PETER
+
+FindPath marvel 3-D_MAN/CHARLES_CHAN PERRIKUS
+
+FindPath marvel ALBUQUERQUE,_JEREMIA 3-D_MAN/CHARLES_CHAN
+
+FindPath marvel CENTURY ALBUQUERQUE,_JEREMIA
+
+FindPath marvel ANGAR_THE_SCREAMER/D WASP/JANET_VAN_DYNE_
+
+FindPath marvel BINARY/CAROL_DANVERS MYSTIQUE/RAVEN_DARKH

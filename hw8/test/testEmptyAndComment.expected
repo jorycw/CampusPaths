@@ -1,0 +1,16 @@
+Menu:
+r to find a route
+b to see a list of all buildings
+q to quit
+
+Enter an option ('m' to see the menu): # testing echoing empty and commented lines
+
+# a one
+
+# a two, a one
+
+
+# a two
+# three
+
+# # #

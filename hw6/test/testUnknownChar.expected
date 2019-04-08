@@ -1,0 +1,15 @@
+# Simple test of breadth-first search algorithm.
+# Verifies that it produces the correct output when either
+# the first, the second or when both of the characters are
+# not in the graph
+
+created graph characters
+added node A to characters
+added node B to characters
+
+unknown character C
+
+unknown character C
+
+unknown character D
+unknown character E

@@ -1,0 +1,8 @@
+# Find a path with Dijkstra's algorithm when the path 
+# is to the node itself
+
+CreateGraph graph
+
+AddNode graph a
+
+FindPath graph a a

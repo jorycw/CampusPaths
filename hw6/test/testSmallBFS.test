@@ -1,0 +1,12 @@
+# Test the parser on a graph that contains several nodes
+# with two edges each. This is a simple starting test and only
+# tests regular cases before testing scalability
+# NOT A TRUE UNIT TEST
+
+LoadGraph heroes staffSuperheroes.tsv
+
+FindPath heroes Ernst-the-Bicycling-Wizard Perkins-the-Magical-Singing-Instructor
+
+FindPath heroes Grossman-the-Youngest-of-them-all Notkin-of-the-Superhuman-Beard
+
+FindPath heroes NotIn ThisGraph

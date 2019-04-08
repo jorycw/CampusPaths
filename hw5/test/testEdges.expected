@@ -1,0 +1,32 @@
+# Testing file.
+# Tests adding multiple edges from a single node, 
+# including one to itself, then prints edges out. 
+
+# Create graphs
+created graph graph1
+created graph graph2
+
+# Adds 3 different nodes to graph1
+added node n1 to graph1
+added node n2 to graph1
+added node n3 to graph1
+
+# Adds 3 different nodes to graph2
+added node m1 to graph2
+added node m2 to graph2
+added node m3 to graph2
+
+# Adds 4 edges to graph1
+added edge toMyself from n1 to n1 in graph1
+added edge n1TOn3 from n1 to n3 in graph1
+added edge xtran1TOn3 from n1 to n3 in graph1
+added edge whyNotAddN2 from n1 to n2 in graph1
+
+# Adds 3 edges to graph 2
+added edge sameNames from m1 to m3 in graph2
+added edge sameNames from m1 to m2 in graph2
+added edge notAChildofN1 from m2 to m1 in graph2
+
+# Prints Edges of n1 in graph1 and m1 in graph2
+the children of n1 in graph1 are: n1(toMyself) n2(whyNotAddN2) n3(n1TOn3) n3(xtran1TOn3)
+the children of m1 in graph2 are: m2(sameNames) m3(sameNames)

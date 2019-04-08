@@ -1,0 +1,9 @@
+# Find a path with Dijkstra's algorithm when the path
+# is to the node itself
+
+created graph graph
+
+added node a to graph
+
+path from a to a:
+total cost: 0.000

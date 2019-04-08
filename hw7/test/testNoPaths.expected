@@ -1,0 +1,10 @@
+# Find a path with Dijkstra's algorithm when there are no paths
+# between two nodes
+
+created graph graph
+
+added node a to graph
+added node b to graph
+
+path from a to b:
+no path found

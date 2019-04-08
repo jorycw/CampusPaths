@@ -1,0 +1,16 @@
+# Find a path with Dijkstra's algorithm when one of the nodes
+# does not exist
+
+created graph graph
+
+added node a to graph
+added node b to graph
+added node c to graph
+
+added edge 1.000 from a to b in graph
+added edge 1.000 from b to a in graph
+added edge 1.000 from b to c in graph
+added edge 1.000 from c to b in graph
+
+unknown character d
+unknown character d

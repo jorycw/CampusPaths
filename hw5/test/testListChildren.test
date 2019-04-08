@@ -1,0 +1,31 @@
+# Testing file.
+# Tests listing back children in  a graph, both with no children, 
+# and children alphabetically (first by node name and then edge label)
+
+# Create graph
+CreateGraph graph1
+
+# Adds 3 nodes to graph1
+AddNode graph1 n1
+AddNode graph1 n2
+AddNode graph1 n3
+
+# Lists children of a node with no children in graph1
+ListChildren graph1 n1
+
+# Adds 3 different children to n1, including itself
+AddEdge graph1 n1 n1 myself
+AddEdge graph1 n1 n2 to2
+AddEdge graph1 n1 n3 to3
+
+# Lists children of node n1 in graph1
+ListChildren graph1 n1
+
+# Add 4 more edges to graph1 that are close in string comparison by label
+AddEdge graph1 n1 n1 meself
+AddEdge graph1 n1 n1 4me
+AddEdge graph1 n1 n1 notMyself
+AddEdge graph1 n1 n1 lIsBeforeM
+
+# Lists children of node n1 in graph1
+ListChildren graph1 n1

@@ -1,0 +1,14 @@
+# Find a path with Dijkstra's algorithm when the path s
+# between the two nodes are not the correct direction
+
+created graph graph
+
+added node a to graph
+added node b to graph
+added node c to graph
+
+added edge 1.000 from c to b in graph
+added edge 1.000 from b to a in graph
+
+path from a to c:
+no path found

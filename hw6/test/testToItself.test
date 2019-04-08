@@ -1,0 +1,14 @@
+# Simple test of breadth-first search algorithm.
+# Verifies that it can find a path to itself when there are no
+# edges in the graph and when there are only an edge to itself
+# in the graph
+
+CreateGraph characters
+
+AddNode characters A
+
+FindPath characters A A
+
+AddEdge characters A A aEdgeA
+
+FindPath characters A A

@@ -1,0 +1,9 @@
+# Find a path with Dijkstra's algorithm when there are no paths
+# between two nodes
+
+CreateGraph graph
+
+AddNode graph a
+AddNode graph b
+
+FindPath graph a b

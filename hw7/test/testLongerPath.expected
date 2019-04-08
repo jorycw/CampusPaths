@@ -1,0 +1,23 @@
+# Find a path with Dijkstra's algorithm when there are two distinct paths
+# in which the path containing more edges has a lower cost
+
+created graph graph
+added node a to graph
+added node b to graph
+added node c to graph
+added node d to graph
+
+added node a.5 to graph
+
+added edge 0.200 from a to a.5 in graph
+added edge 0.100 from a.5 to b in graph
+added edge 2.200 from b to d in graph
+
+added edge 2.000 from a to c in graph
+added edge 2.000 from c to d in graph
+
+path from a to d:
+a to a.5 with weight 0.200
+a.5 to b with weight 0.100
+b to d with weight 2.200
+total cost: 2.500

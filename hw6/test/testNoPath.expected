@@ -1,0 +1,29 @@
+# Simple test of breadth-first search algorithm.
+# Verifies that it correctly indicates when there is no path found
+# between two nodes. This can be the case when there exists no edges
+# between the two nodes or when the direction of the edges don't allow
+# for a path from the first node to the second (note for marvel paths
+# all paths (edges) will always be two sided)
+
+created graph characters
+added node A to characters
+added node B to characters
+added node C to characters
+
+path from A to C:
+no path found
+
+added edge A2B from A to B in characters
+added edge C2B from C to B in characters
+
+path from A to C:
+no path found
+
+added node D to characters
+added edge B2D from B to D in characters
+
+path from A to D:
+A to B via A2B
+B to D via B2D
+path from D to A:
+no path found

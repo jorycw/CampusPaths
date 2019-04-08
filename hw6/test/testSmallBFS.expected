@@ -1,0 +1,15 @@
+# Test the parser on a graph that contains several nodes
+# with two edges each. This is a simple starting test and only
+# tests regular cases before testing scalability
+# NOT A TRUE UNIT TEST
+
+loaded graph heroes
+
+path from Ernst-the-Bicycling-Wizard to Perkins-the-Magical-Singing-Instructor:
+Ernst-the-Bicycling-Wizard to Perkins-the-Magical-Singing-Instructor via CSE331
+
+path from Grossman-the-Youngest-of-them-all to Notkin-of-the-Superhuman-Beard:
+Grossman-the-Youngest-of-them-all to Notkin-of-the-Superhuman-Beard via CSE331
+
+unknown character NotIn
+unknown character ThisGraph
